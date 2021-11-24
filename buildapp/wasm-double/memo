@@ -1,0 +1,3 @@
+(import "wasi_snapshot_preview1" "proc_exit") (param i32))
+
+m++ main1.c -o main1.wasm -s "EXPORTED_FUNCTIONS=['_main', '_addOne']" -s WASM=1
