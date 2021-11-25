@@ -59,10 +59,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /app
+CMAKE_SOURCE_DIR = /buildapp/app
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /app/dist/build
+CMAKE_BINARY_DIR = /buildapp/app/dist/build
 
 #=============================================================================
 # Target rules for target CMakeFiles/cppmain.dir
@@ -71,7 +71,7 @@ CMAKE_BINARY_DIR = /app/dist/build
 CMakeFiles/cppmain.dir/all:
 	$(MAKE) -f CMakeFiles/cppmain.dir/build.make CMakeFiles/cppmain.dir/depend
 	$(MAKE) -f CMakeFiles/cppmain.dir/build.make CMakeFiles/cppmain.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/app/dist/build/CMakeFiles --progress-num=1,2 "Built target cppmain"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/buildapp/app/dist/build/CMakeFiles --progress-num=1,2 "Built target cppmain"
 .PHONY : CMakeFiles/cppmain.dir/all
 
 # Include target in all.
@@ -81,9 +81,9 @@ all: CMakeFiles/cppmain.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/cppmain.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /app/dist/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /buildapp/app/dist/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/cppmain.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /app/dist/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /buildapp/app/dist/build/CMakeFiles 0
 .PHONY : CMakeFiles/cppmain.dir/rule
 
 # Convenience name for target.

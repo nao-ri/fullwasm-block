@@ -6,16 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/app/src/main.cpp
-SDL/SDL.h
--
-emscripten.h
--
-emscripten/bind.h
--
-opencv2/opencv.hpp
--
-
 /build/opencv/build_wasm/install/include/opencv4/opencv2/calib3d.hpp
 opencv2/core.hpp
 /build/opencv/build_wasm/install/include/opencv4/opencv2/opencv2/core.hpp
@@ -885,4 +875,14 @@ opencv2/core.hpp
 /build/opencv/build_wasm/install/include/opencv4/opencv2/video/opencv2/core.hpp
 opencv2/imgproc.hpp
 /build/opencv/build_wasm/install/include/opencv4/opencv2/video/opencv2/imgproc.hpp
+
+/buildapp/app/src/main.cpp
+SDL/SDL.h
+-
+emscripten.h
+-
+emscripten/bind.h
+-
+opencv2/opencv.hpp
+-
 
