@@ -2,6 +2,8 @@
 #include <emscripten.h>
 #include <emscripten/bind.h>
 #include <opencv2/opencv.hpp>
+//#include <opencv2/highgui.hpp>
+#include <vector>
 
 namespace {
 
@@ -34,11 +36,28 @@ cv::cvtColor(rgbaMat, outMat, cv::COLOR_RGBA2GRAY);
   // アルファちゃんねるを追加
   // cv::cvtColor(rgbOutMat, outMat, cv::COLOR_RGB2RGBA);
   
+// cv::CascadeClassifier cascade; 
+// cascade.load("./haarcascade_frontalface_alt.xml"); 
+// cv::vector<Rect> faces; 
+
+// Cascade file for face detection
+const std::string cascade_name = "/build/opencv/data/haarcascades/haarcascade_frontalface_default.xml";
+cv::CascadeClassifier cascade;
+cascade.load(cascade_name);
+// Detect faces
+std::vector<cv::Rect> faces;
+cascade.detectMultiScale(outMat, faces);
+
+// // Draw rect to frame
+// for(std::vector<cv::Rect>::iterator it=faces.begin(); it!=faces.end(); it++){
+//     cv::rectangle(rgbaMat, *it, CV_RGB(255,0,0), 3);
+// }
+
 
   if (SDL_MUSTLOCK(screen))
     SDL_LockSurface(screen);
-  cv::Mat dstRGBAImage(height, width, CV_8UC1, screen->pixels);
-  outMat.copyTo(dstRGBAImage);
+  cv::Mat dstRGBAImage(height, width, CV_8UC4, screen->pixels);
+  rgbaMat.copyTo(dstRGBAImage);
   if (SDL_MUSTLOCK(screen))
     SDL_UnlockSurface(screen);
   SDL_Flip(screen);
